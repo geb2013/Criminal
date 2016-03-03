@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 public class CrimeFragment extends Fragment {
+    private static final String TAG = "CrimeFragment";
+
     private Crime mCrime;
     private EditText mTitleField;
 
@@ -29,10 +32,18 @@ public class CrimeFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
+            /**
+             * onTextChanged is a protected method in the TextView class.
+             * It is usable within an EditText object, because EditText
+             * extends TextView
+             */
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setTitle(s.toString());
+                Log.d(TAG, s.toString());
             }
+            
             @Override
             public void afterTextChanged(Editable s) {
 
