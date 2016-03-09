@@ -59,9 +59,8 @@ public class CrimeFragment extends Fragment {
         });
 
         // Formats date as Wednesday, Jul 22, 2015
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("EEEE, MMM d, yyyy");
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-        mDateButton.setText(dateFormatter.format(mCrime.getDate()));
+        mDateButton.setText(mCrime.getFormattedDate());
         mDateButton.setEnabled(false);
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
