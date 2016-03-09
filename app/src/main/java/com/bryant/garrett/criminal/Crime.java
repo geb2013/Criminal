@@ -15,7 +15,7 @@ public class Crime {
         mDate = new Date();
     }
 
-    public UUID gemId() {
+    public UUID getId() {
         return mId;
     }
 
