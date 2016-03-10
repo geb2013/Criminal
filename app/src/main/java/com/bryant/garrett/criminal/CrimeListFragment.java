@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -45,6 +48,7 @@ public class CrimeListFragment extends Fragment {
         private TextView mTitleTextView;
         private TextView mDateTextView;
         private CheckBox mSolvedCheckBox;
+        private ImageView mThumbnailImageView;
 
         public CrimeHolder(View itemView) {
             super(itemView);
@@ -56,6 +60,8 @@ public class CrimeListFragment extends Fragment {
                     itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox)
                     itemView.findViewById(R.id.list_item_crime_solved_check_box);
+            mThumbnailImageView = (ImageView)
+                    itemView.findViewById(R.id.list_item_crime_thumbnail_image_view);
         }
 
         public void bindCrime(Crime crime) {
@@ -63,6 +69,8 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getFormattedDate());
             mSolvedCheckBox.setChecked(mCrime.isSolved());
+
+            Picasso.with(getContext()).load(mCrime.getImageUrl()).into(mThumbnailImageView);
         }
 
         @Override

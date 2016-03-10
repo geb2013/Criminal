@@ -12,22 +12,33 @@
         android:layout_alignParentRight="true"
         android:padding="4dp" />
 
-    <TextView
-        android:id="@+id/list_item_crime_title_text_view"
+    <LinearLayout
+        android:id="@+id/list_item_crime_title_layout"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/list_item_crime_solved_check_box"
-        android:textStyle="bold"
-        android:padding="4dp"
-        tools:text="Crime Title" />
+        android:padding="4dp">
+        <ImageView
+            android:id="@+id/list_item_crime_thumbnail_image_view"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+        <TextView
+            android:id="@+id/list_item_crime_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            tools:text="Crime Title" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/list_item_crime_date_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/list_item_crime_solved_check_box"
-        android:layout_below="@id/list_item_crime_title_text_view"
+        android:layout_below="@id/list_item_crime_title_layout"
         android:padding="4dp"
         tools:text="Crime Date" />
+
 
 </RelativeLayout>

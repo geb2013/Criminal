@@ -10,6 +10,7 @@ public class Crime {
     private Date mDate;
     private boolean mSolved;
     private SimpleDateFormat dateFormatter;
+    private String mImageUrl;
 
     public Crime() {
         // Generate unique identifier
@@ -45,5 +46,12 @@ public class Crime {
     }
     public void setSolved(boolean solved) {
         mSolved = solved;
+    }
+
+    public void setImageUrl(String url) {
+        mImageUrl = url;
+    }
+    public String getImageUrl() {
+        return mImageUrl;
     }
 }
