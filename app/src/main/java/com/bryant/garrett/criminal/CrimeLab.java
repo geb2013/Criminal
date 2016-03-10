@@ -25,6 +25,7 @@ public class CrimeLab {
             Crime crime = new Crime();
             crime.setTitle("Crime #" + i);
             crime.setSolved(i % 2 == 0); // Every other one
+            crime.setImageUrl("http://i.imgur.com/DvpvklR.png");
             mCrimes.add(crime);
         }
     }
