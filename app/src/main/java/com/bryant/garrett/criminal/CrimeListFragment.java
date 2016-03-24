@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -82,6 +83,13 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getFormattedDate());
             mSolvedCheckBox.setChecked(mCrime.isSolved());
+            mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // Set the crime's solved property
+                    mCrime.setSolved(isChecked);
+                }
+            });
 
             Picasso.with(getContext()).load(mCrime.getImageUrl()).into(mThumbnailImageView);
         }
